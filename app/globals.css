@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-amid-blue: #3795EB;
+  --color-amid-navy: #05325B;
+  --color-amid-navy-light: #2B65BF;
+  --color-amid-teal: #2BA4C7;
+  --color-amid-gray: #FAFAFA;
+  --color-amid-dark: #090909;
+  --color-amid-text: #414141;
+  --font-sans: var(--font-poppins);
+  --font-heading: var(--font-manrope);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  color: var(--color-amid-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+}
