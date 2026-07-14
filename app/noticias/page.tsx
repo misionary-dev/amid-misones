@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { noticias } from "@/content/noticias";
 
 export const metadata: Metadata = {
@@ -19,30 +20,40 @@ export default function NoticiasPage() {
             {noticias.map((noticia) => (
               <article
                 key={noticia.slug}
-                className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
               >
-                <time className="text-xs text-amid-text/60 uppercase tracking-wide">
-                  {new Date(noticia.date).toLocaleDateString("es-AR", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </time>
-                <h2 className="mt-2 text-xl font-heading font-bold text-amid-dark">
+                <div className="relative h-48 sm:h-56">
+                  <Image
+                    src={noticia.image}
+                    alt={noticia.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <time className="text-xs text-amid-text/60 uppercase tracking-wide">
+                    {new Date(noticia.date).toLocaleDateString("es-AR", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                  <h2 className="mt-2 text-xl font-heading font-bold text-amid-dark">
+                    <Link
+                      href={`/noticias/${noticia.slug}`}
+                      className="hover:text-amid-blue transition-colors"
+                    >
+                      {noticia.title}
+                    </Link>
+                  </h2>
+                  <p className="mt-3 text-sm text-amid-text leading-relaxed">{noticia.excerpt}</p>
                   <Link
                     href={`/noticias/${noticia.slug}`}
-                    className="hover:text-amid-blue transition-colors"
+                    className="inline-block mt-4 text-sm font-semibold text-amid-blue hover:text-amid-navy-light transition-colors"
                   >
-                    {noticia.title}
+                    Leer →
                   </Link>
-                </h2>
-                <p className="mt-3 text-sm text-amid-text leading-relaxed">{noticia.excerpt}</p>
-                <Link
-                  href={`/noticias/${noticia.slug}`}
-                  className="inline-block mt-4 text-sm font-semibold text-amid-blue hover:text-amid-navy-light transition-colors"
-                >
-                  Leer →
-                </Link>
+                </div>
               </article>
             ))}
           </div>

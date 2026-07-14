@@ -1,8 +1,11 @@
+import { CDN } from "../site";
+
 export interface Noticia {
   slug: string;
   title: string;
   excerpt: string;
   date: string;
+  image: string;
   content: string;
 }
 
@@ -13,6 +16,7 @@ export const noticias: Noticia[] = [
     excerpt:
       "Desde AMID MISIONES tenemos el agrado de comunicar una nueva y valiosa alianza estratégica que reafirma nuestro compromiso con la excelencia en la atención médica domiciliaria.",
     date: "2025-04-25",
+    image: `${CDN}/nota-alianzas.JPG`,
     content: `Desde AMID MISIONES tenemos el agrado de comunicar una nueva y valiosa alianza estratégica que reafirma nuestro compromiso con la excelencia en la atención médica domiciliaria. En los últimos días, hemos mantenido una reunión de trabajo con representantes de la empresa BestCare – Nutricia Bagó, especializada en soporte nutricional domiciliario, perteneciente a la división de nutrición médica de Danone.
 
 Participaron de este encuentro el Dr. Agustín Matarrese, Coordinador General de Profesionales de la Salud, el Dr. Facundo Ravotti, y el Gerente Comercial, Lucas Giordano, quienes compartieron la visión, trayectoria y proyección de BestCare, empresa con presencia en más de 10 países, que brinda asistencia a más de 200.000 pacientes y cuenta con la certificación del ITAES (Instituto Técnico para la Acreditación de Establecimientos de Salud), lo que respalda la calidad y seguridad de sus servicios.
@@ -32,6 +36,7 @@ Seguiremos trabajando con dedicación, compromiso y profesionalismo, siempre enf
     excerpt:
       "Hace algunas semanas, el país entero se conmovió con la historia de Michael Natanael Verón, un joven cabo del Ejército que sufrió graves lesiones en la columna tras un trágico accidente en un cuartel de Misiones.",
     date: "2025-04-22",
+    image: `${CDN}/nota-michael.png`,
     content: `Hace algunas semanas, el país entero se conmovió con la historia de Michael Natanael Verón, un joven cabo del Ejército que sufrió graves lesiones en la columna tras un trágico accidente en un cuartel de Misiones. Hoy, su recuperación transcurre entre salas de terapia intensiva, tratamientos complejos y el incondicional acompañamiento de su familia.
 
 Desde AMID, empresa de salud con fuerte presencia en Posadas, Misiones, nos sentimos profundamente interpelados por situaciones como la de Michael. Porque detrás de cada paciente crítico, hay una familia que espera, que lucha y que desea, más que nada, ver a su ser querido recuperarse en un entorno de contención y dignidad.

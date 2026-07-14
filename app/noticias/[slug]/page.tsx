@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { noticias, getNoticia } from "@/content/noticias";
@@ -27,18 +28,28 @@ export default async function NoticiaPage({ params }: Props) {
 
   return (
     <>
-      <section className="bg-amid-navy py-16 text-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <time className="text-xs text-white/60 uppercase tracking-wide">
-            {new Date(noticia.date).toLocaleDateString("es-AR", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </time>
-          <h1 className="mt-3 text-3xl sm:text-4xl font-heading font-bold leading-tight">
-            {noticia.title}
-          </h1>
+      <section className="relative h-64 sm:h-80">
+        <Image
+          src={noticia.image}
+          alt={noticia.title}
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-amid-navy/70" />
+        <div className="relative z-10 h-full flex items-end">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 w-full">
+            <time className="text-xs text-white/60 uppercase tracking-wide">
+              {new Date(noticia.date).toLocaleDateString("es-AR", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </time>
+            <h1 className="mt-2 text-2xl sm:text-3xl font-heading font-bold text-white leading-tight">
+              {noticia.title}
+            </h1>
+          </div>
         </div>
       </section>
 

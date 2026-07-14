@@ -1,3 +1,5 @@
+export const CDN = "https://pub-722972c3a3ad4b6b925b35a66872ae55.r2.dev";
+
 export const siteConfig = {
   name: "AMID",
   fullName: "AMID | Internación Domiciliaria",
@@ -7,6 +9,7 @@ export const siteConfig = {
   phones: ["3764326720", "3764335998"],
   whatsapp: "3764906720",
   email: "internaciondomiciliaria@amidmisiones.com",
+  logo: `${CDN}/logo.png`,
   social: {
     facebook: "https://www.facebook.com/amidsalud",
     instagram: "https://www.instagram.com/amid_misiones/",
@@ -16,6 +19,11 @@ export const siteConfig = {
     { label: "Noticias", href: "/noticias" },
     { label: "Nosotros", href: "/nosotros" },
     { label: "Curriculums", href: "/curriculums" },
+  ],
+  heroImages: [
+    `${CDN}/Home-1.JPG`,
+    `${CDN}/Home-2.jpg`,
+    `${CDN}/Home-3.JPG`,
   ],
 } as const;
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { team, aboutText, howWeWork } from "@/content/team";
-import { siteConfig } from "@/content/site";
+import { siteConfig, CDN } from "@/content/site";
 import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 export const metadata: Metadata = {
@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 export default function NosotrosPage() {
   return (
     <>
-      {/* Page header */}
       <section className="bg-amid-navy py-16 text-white text-center">
         <h1 className="text-4xl font-heading font-bold">Nosotros</h1>
       </section>
@@ -31,7 +30,7 @@ export default function NosotrosPage() {
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/images/equipo.png"
+                src={`${CDN}/Home-2.jpg`}
                 alt="Equipo AMID Misiones"
                 fill
                 className="object-cover"
@@ -51,16 +50,20 @@ export default function NosotrosPage() {
             Nuestros expertos son profesionales altamente capacitados y experimentados en sus
             respectivas áreas, comprometidos con brindar soluciones innovadoras y eficaces.
           </p>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {team.map((member) => (
               <div
                 key={member.name}
                 className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="w-20 h-20 mx-auto rounded-full bg-amid-navy/10 flex items-center justify-center mb-4">
-                  <span className="text-2xl font-heading font-bold text-amid-navy">
-                    {member.name.charAt(0)}
-                  </span>
+                <div className="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 ring-4 ring-amid-blue/10">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={112}
+                    height={112}
+                    className="object-cover w-full h-full"
+                  />
                 </div>
                 <h3 className="font-heading font-bold text-amid-dark">{member.name}</h3>
                 <p className="text-sm text-amid-text mt-1">{member.role}</p>

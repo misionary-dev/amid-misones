@@ -15,7 +15,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <Link href="/" className="shrink-0">
           <Image
-            src="/images/logo.png"
+            src={siteConfig.logo}
             alt="AMID"
             width={135}
             height={50}

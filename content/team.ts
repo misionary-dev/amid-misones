@@ -1,9 +1,9 @@
+import { CDN } from "./site";
+
 export const team = [
-  { name: "Rosa Ayala Bellusci", role: "Socia y enfermera de AMID" },
-  { name: "Dr. Nestor Javier Bellusci", role: "Director médico de AMID" },
-  { name: "Marcelo Ayala", role: "Jefe de enfermeros de AMID" },
-  { name: "Dr. Emilio Bellusci", role: "Administración General" },
-  { name: "Lic. Lucia Garzon Maceda", role: "Lic. en Psicología / Administración General" },
+  { name: "Rosa Ayala Bellusci", role: "Socia y enfermera de AMID", image: `${CDN}/Rosa-Ayala.png` },
+  { name: "Dr. Nestor Javier Bellusci", role: "Director médico de AMID", image: `${CDN}/Javier-Bellusci.png` },
+  { name: "Dr. Emilio Bellusci", role: "Administración General", image: `${CDN}/Emilio-Bellusci.png` },
 ] as const;
 
 export const aboutText =

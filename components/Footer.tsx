@@ -70,6 +70,17 @@ export function Footer() {
       <div className="border-t border-white/10 py-4 text-center text-xs opacity-60">
         © {new Date().getFullYear()} AMID Misiones. Todos los derechos reservados.
       </div>
+
+      <div className="border-t border-white/5 py-3 text-center">
+        <a
+          href="https://misionary.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-xs text-white/40 hover:text-white/70 transition-colors"
+        >
+          Powered by <span className="font-semibold tracking-wide">Misionary</span>
+        </a>
+      </div>
     </footer>
   );
 }
